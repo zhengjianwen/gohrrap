@@ -1,0 +1,27 @@
+{
+    "debug": true,
+    "token": "www.hairuinet.com",
+    "log": {
+        "access": "var/access.log",
+        "error": "var/error.log"
+    },
+    "http": {
+        "listen": "0.0.0.0:9118"
+    },
+    "mysql": {
+        "addr": "root:123456@tcp(127.0.0.1:3306)",
+        "idle": 5,
+        "max": 100,
+        "sql": true
+    },
+    "redis": {
+        "addr": "127.0.0.1:6379",
+        "idle": 5,
+        "max": 1000,
+        "timeout": {
+            "conn": 100,
+            "read": 1000,
+            "write": 1000
+        }
+    }
+}
