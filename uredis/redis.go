@@ -32,7 +32,7 @@ func WiteCode(key string) bool {
 	defer c.Close()
 	_, err = c.Do("SET", key, "unicloud")
 	if err != nil{return  false}
-	_, err = c.Do("EXPIRE", key, 60 * config.G.Redis.Timeout)
+	_, err = c.Do("EXPIRE", key, 60 * 3)
 	if err != nil{return  false}
 	return true
 

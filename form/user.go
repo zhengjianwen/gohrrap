@@ -27,6 +27,16 @@ func UserForm(u *models.HrUser) (bool,string) {
 	if !utils.IsAlamNumber(u.Username){
 		return false,"用户名只能是英文、数字或下划线"
 	}
+	if !UserPasswdForm(u.Password){
+		return false,"密码验证失败不符合安全要求"
+	}
 	return true, ""
+}
+
+func UserPasswdForm(pasw string) bool {
+	if len(pasw) < 6 {
+		return false
+	}
+	return true
 }
 
